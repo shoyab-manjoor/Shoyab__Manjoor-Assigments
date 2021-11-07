@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 5</title>
+</head>
+<body>
+    <script>
+        function leapYear(n){
+                if((n%400==0) || ( (n%4==0) && (n%100!=0) ))
+                {
+                    document.write(n," is Leap Year :","<br>","Next 20 leap years are:<br>");
+                    var count = 1;
+                    var next = n
+                    while(count!=20)
+                    {
+                            next +=4
+                            if((next%400==0) || ( (next%4==0) && (next%100!=0) ))
+                            {
+                                document.write(next,"<br>");
+                                count++;
+                            }
+                    }
+                }
+                    
+                else
+                document.write(n," is Not a leap Year,please valid year !");
+        }
+        var num = prompt("enter any Leap Year:");
+        var n = parseInt(num);
+        
+        document.write("You Entered Number:",n,"<br>");
+        leapYear(n);
+    </script>
+</body>
+</html>
