@@ -3,22 +3,20 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <bean class="Assignment1.Address" name="address">
-    	<property name="street" value="2"/>
-    	<property name="city" value="nehru nagar"/>
-    	<property name="state" value="delhi"/>
-    	<property name="zip" value="012345"/>
-    	<property name="country" value="india"/>
-    </bean>
     
-     <bean class="Assignment1.Customer" name="customer">
-    	<property name="customerId" value="2"/>
-    	<property name="customerName" value="nehru nagar"/>
-    	<property name="customerContact" value="delhi"/>
-    	<property name="customerAddress">
-    		<ref bean="address"/>
-    	</property>
-    </bean>
-
+<bean class="Assignment1.Address" name="address">
+		<constructor-arg name="street" value="3" type="String"/>
+		<constructor-arg name="city" value="Ahmedabad" type="String"/>
+		<constructor-arg name="zip" value="987654" type="String"/>
+		<constructor-arg name="country" value="India" type="String"/>	
+ </bean>
+ 
+ <bean class="Assignment1.Customer" name="customer">
+		<constructor-arg   value="100" />
+		<constructor-arg   value="abcdef" />
+		<constructor-arg   value="01232" />
+		<constructor-arg   ref="address"/>
+			
+ </bean>
+ 
 </beans>
